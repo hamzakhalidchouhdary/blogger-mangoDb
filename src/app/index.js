@@ -4,6 +4,7 @@ const router = require("./routers/index");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT;
+const MONGODB_CONNECTION_STR = process.env.MONGODB_CONNECTION_STR_TEST;
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(express.json());
 app.use("/", router);
 
 const connectMongoDB = async () => {
-  await mongoose.connect("mongodb+srv://bloggermongodb.vnz6v6u.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority");
+  await mongoose.connect(`${MONGODB_CONNECTION_STR}`);
 }
 
 const startServer = async function () {
