@@ -3,3 +3,4 @@ node_modules
 todos.todo
 src/db/database_dev.sqlite
 src/db/database_test.sqlite
+testDBmongoCA.pem
